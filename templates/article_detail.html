@@ -1,12 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
+{% include 'home.html' %}
+
+
 <div class="article-entry">
 <h2>{{ object.title }}</h2>
 <p>by {{ object.author }} | {{ object.date }}</p>
-<p>{{ object.body }}</p>
+
+<p>{{ object.body| safe}}</p>
+{% if object.img_field_name %}
+<img src ="{{ object.img_field_name.url }}">
+{% endif %}
+{% if object.file_field_name %}
+ <h1>{{ object.file_field_name.url }}</h1>
+<a href ="{{ object.file_field_name.url }}" class="btn">download pdf</a>
+{% endif %}
+ 
 </div>
  
+ 
+{% if user.id == object.author.id %}
+
 <p><a href="{% url 'article_edit' article.pk %}">Edit</a> |
 <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
+{% endif %}
+ 
 <p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
 {% endblock content %}
+

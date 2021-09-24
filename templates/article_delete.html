@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+
+{% include 'home.html' %}
+
 <h1>Delete</h1>
 <form action="" method="post">{% csrf_token %}
 <p>Are you sure you want to delete "{{ article.title }}"?</p>

@@ -1,9 +1,17 @@
-a{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block title %}Home{% endblock title %}
 {% block content %}
+
+
+
 {% if user.is_authenticated %}
-Hi {{ user.username }}!
+ 
+ 
+<a href="{% url 'home' %}">home</a>
+<p><a href= "{% url 'article_list' %}">articles </a> </p>
 <p><a href="{% url 'logout' %}">Log Out</a></p>
+<p><a href="{% url 'edit_profile' %}">Edit profile</a></p>
+Hi {{ user.first_name }}!
 <a href="{% url 'article_new' %}">+ New</a>
 <p><a href= "{% url 'article_list' %}">articles </a> </p>
 {% else %}
@@ -11,4 +19,6 @@ Hi {{ user.username }}!
 <a href="{% url 'login' %}">Log In</a> |
 <a href="{% url 'signup' %}">Sign Up</a>
 {% endif %}
+
+
 {% endblock content %}

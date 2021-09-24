@@ -13,6 +13,7 @@ from .models import Article
 class ArticleListView(LoginRequiredMixin ,ListView):
     model= Article
     template_name = 'article_list.html'
+    # ordering = ['-id']
     login_url= 'login'
 
 class ArticleDetailView(LoginRequiredMixin ,DetailView):  
@@ -24,6 +25,7 @@ class ArticleUpdateView(LoginRequiredMixin ,UpdateView):
     model = Article
     fields = ('title', 'body', 'img_field_name', 'file_field_name',)
     template_name = 'article_edit.html'
+    success_url = reverse_lazy('article_list')
     login_url= 'login'
 
     def dispatch(self, request, *args, **kwargs): 
@@ -39,7 +41,7 @@ class ArticleDeleteView(LoginRequiredMixin ,DeleteView):
     success_url = reverse_lazy('article_list')
     login_url= 'login'
 
-    def dispatch(self, request, *args, **kwargs): # new
+    def dispatch(self, request, *args, **kwargs): 
         obj = self.get_object()
         if obj.author != self.request.user:
             raise PermissionDenied
