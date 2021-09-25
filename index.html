@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/4e7486bb25.js" crossorigin="anonymous">
+    </script>
+    <title>Registration Form</title>
+    </head>
+    <body>
+       <div class="container">
+    <div class="logo">
+      <a href="https://www.aitpune.com">
+        <img src="army-institute-of-technology.jpg" height="80px" width="400px">
+      </a>
+     </div>
+     <div class="title">Registration</div>
+    <div class="content">
+      <form action="/action_page.php">
+        <div class="user-details">
+
+        <div class="input-box">
+        <span class="details">First Name</span>
+          <div class="input-icon">
+           <i class="fa fa-user icon"></i>
+        <input type="text" placeholder="Enter your first name" required>
+          </div>
+        </div>
+        
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <div class="input-icon">
+           <i class="fa fa-user icon"></i>
+            <input type="text" placeholder="Enter your last name" required>
+          </div>
+        </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <div class="input-icon">
+              <i class="fa fa-envelope icon"></i>
+            <input type="email" placeholder="Enter your email"  required>
+           </div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Registration Id</span>
+            <input type="text" maxlength="5" placeholder="Enter Registration Id" required>
+          </div>
+          
+
+          <div class="input-box">
+            <span class="details">Current Year</span>
+           <div class="custom_select">
+                <select>
+                    <option value="">Select</option>
+                    <option value="ME 2nd year">ME 2nd Year</option>
+                    <option value="3rd year">3rd Year</option>
+                    <option value="4th year">4th Year</option>
+                </select>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Branch</span>
+            <div class="custom_select">
+                <select>
+                    <option value="">Select</option>
+                    <option value="cse">Computer Engineering</option>
+                    <option value="it">Information Technology</option>
+                    <option value="me">Mechanical Engineering</option>
+                    <option value="entc">Electronics and Telecommunication</option>
+
+                </select>
+            </div>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <div class="input-icon">
+              <i class="fa fa-key icon"></i>
+            <input type="password" placeholder="Enter your password" required>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Confirm Password</span>
+          <div class="input-icon">
+            <i class="fa fa-key icon"></i>
+          <input type="password" placeholder="Confirm your password" required>
+        </div>
+      </div>
+
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <div class="input-icon">
+               <i class="fas fa-phone-square-alt icon"></i>
+            <input type="text" maxlength="10" pattern="[0-9]{10}" placeholder="Enter your mobile number" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+        
+         
+    </body>
+</html>
